@@ -1,69 +1,62 @@
-angular-card
+angular-check
 ============
 
-Angular directive for card https://github.com/jessepollak/card
+Angular directive for check https://github.com/gavruk/check
 
-![screen shot 2014-12-20 at 4 37 52 pm](https://cloud.githubusercontent.com/assets/507195/5514998/9a252c80-8866-11e4-81ad-dea3dc5e6870.png)
+![2a051cd700](https://cloud.githubusercontent.com/assets/507195/5537521/238cd276-8ab4-11e4-8792-94e1518713b2.jpg)
 
-## Demo
-
-http://jessepollak.github.io/card/
 
 ## Installation
 
-`bower install angular-card`
+`bower install angular-check`
 
 ##Usage
 
 ```html
 <form action="#"
-  data-card
-  data-width="500"
-  data-card-container="#card-container"
-  data-values="cardValues"
-  data-options="cardOptions"
-  data-messages="cardMessages">
+    data-check
+    data-width="500"
+    data-check-container="#check-container"
+    data-values="checkValues"
+    >
 
   <div>
-    <input placeholder="Card number" type="text" card-number data-ng-model="card.number" />
+      <input placeholder="Bank Name" type="text" check-bank-name data-ng-model="check.bankName" />
 
-    <input placeholder="Full name" type="text" card-name data-ng-model="card.name" />
+      <input placeholder="Full name" type="text" check-name data-ng-model="check.name" />
   </div>
   <div>
-    <input placeholder="MM / YYYY" type="text" card-expiry data-ng-model="card.expiry" />
+      <input placeholder="Routing Number" type="text" check-routing-number data-ng-model="check.routingNumber" />
 
-    <input placeholder="CVC" type="text" card-cvc data-ng-model="card.cvc" />
+      <input placeholder="Account Number" type="text" check-account-number data-ng-model="check.accountNumber" />
   </div>
-  
+  <div>
+      <input placeholder="Order" type="text" check-order data-ng-model="check.order" />
+  </div>
 </form>
+
+<div id="check-container"></div>
 ```
 
 ```js
-angular.module('app', ['gavruk.card'])
+angular.module('app', ['gavruk.check'])
+
 .controller('ExampleCtrl', ['$scope', function($scope) {
 
-  $scope.card = {
+  $scope.check = {
     name: 'Mike Brown',
-    number: '5555 4444 3333 1111',
-    expiry: '11 / 2020',
-    cvc: '123'
+    bankName: 'Citi Bank',
+    accountNumber: '1111111111',
+    routingNumber: '222222222',
+    order: 'Software'
   };
 
-  $scope.cardValues = {
-    name: 'Your Full Name',
-    number: 'xxxx xxxx xxxx xxxx',
-    expiry: 'MM/YY',
-    cvc: 'xxx'
-  };
-
-  $scope.cardMessages = {
-    validDate: 'valid\nthru',
-    monthYear: 'MM/YYYY',
-  };
-
-  $scope.cardOptions = {
-    debug: false,
-    formatting: true
+  $scope.checkValues = {
+    accountNumber: '&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;',
+    routingNumber: '&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;',
+    name: 'Full Name',
+    bankName: 'Bank Name',
+    order: '_________________________'
   };
 
 }]);
