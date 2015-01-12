@@ -60,7 +60,7 @@ angular.module('gavruk.check', [])
       cardCtrl = ctrls[0];
       cardCtrl.accountNumberInput = element;
       scope.$watch('ngModel', function() {
-        element.trigger('keyup');
+        element.trigger('change');
       });
     }
   };
@@ -77,7 +77,7 @@ angular.module('gavruk.check', [])
       cardCtrl = ctrls[0];
       cardCtrl.routingNumberInput = element;
       scope.$watch('ngModel', function() {
-        element.trigger('keyup');
+        element.trigger('change');
       });
     }
   };
@@ -94,7 +94,7 @@ angular.module('gavruk.check', [])
       cardCtrl = ctrls[0];
       cardCtrl.nameInput = element;
       scope.$watch('ngModel', function() {
-        element.trigger('keyup');
+        element.trigger('change');
       });
     }
   };
@@ -111,7 +111,7 @@ angular.module('gavruk.check', [])
       cardCtrl = ctrls[0];
       cardCtrl.bankNameInput = element;
       scope.$watch('ngModel', function() {
-        element.trigger('keyup');
+        element.trigger('change');
       });
     }
   };
@@ -129,7 +129,7 @@ angular.module('gavruk.check', [])
       cardCtrl = ctrls[0];
       cardCtrl.orderInput = element;
       scope.$watch('ngModel', function() {
-        element.trigger('keyup');
+        element.trigger('change');
       });
     }
   };
